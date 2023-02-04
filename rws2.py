@@ -66,11 +66,11 @@ dataframe = pd.DataFrame(data_dict)
 x = 0
 y = 1#37908
 
-#def fonksiyon(i):
-    # global x
-    # global y
-number = np.arange(x,y)
-for i in tqdm(number):
+def fonksiyon(i):
+    global x
+    global y
+#number = np.arange(x,y)
+#for i in tqdm(number):
     dealer_url = dataframe.dealer_url[i]  # dealer_url = dataframe["links"][i]
     ic(dealer_url)
 
@@ -365,7 +365,7 @@ for i in tqdm(number):
         
     driver.close()
 
-#if __name__ == '__main__':
-#    with concurrent.futures.ProcessPoolExecutor() as executor:  #ThreadPoolExecutor
-#        i = list(range(x, y))  # i = [0,1,2,3...100]
-#        executor.map(fonksiyon, i)
+if __name__ == '__main__':
+    with concurrent.futures.ProcessPoolExecutor() as executor:  #ThreadPoolExecutor
+        i = list(range(x, y))  # i = [0,1,2,3...100]
+        executor.map(fonksiyon, i)
